@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-from helpers import func
+from src.helpers import func
 
 def lambda_handler(event, context):
     d = {'a':[1,2,3],'b':[4,5,6]}
