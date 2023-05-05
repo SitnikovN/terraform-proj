@@ -1,2 +1,2 @@
-# terraform-proj
-demo terraform project
+# lambda repo code for terraform-lambda-etl-rep
+lambda transformation function
