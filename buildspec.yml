@@ -8,10 +8,11 @@ phases:
 
   pre_build:
     commands:
-      - echo "Mypy type checking"
-      - mypy --config-file setup.cfg
       - echo "Isort type checking"
       - isort . --check-only
+      - echo "Mypy type checking"
+      - mypy --config-file setup.cfg
+
   build:
     commands:
       - echo "Zipping deployment package..."
