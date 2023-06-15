@@ -4,13 +4,14 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
-      - pip install mypy
+      - pip install mypy isort
 
   pre_build:
     commands:
       - echo "Mypy type checking"
       - mypy --config-file setup.cfg
-
+      - echo "Isort type checking"
+      - isort . --check-only
   build:
     commands:
       - echo "Zipping deployment package..."
