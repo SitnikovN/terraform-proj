@@ -1,5 +1,16 @@
 version: 0.2
 phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - pip install mypy
+
+  pre_build:
+    commands:
+      - echo "Mypy type checking"
+      - mypy --config-file setup.cfg
+
   build:
     commands:
       - echo "Zipping deployment package..."
