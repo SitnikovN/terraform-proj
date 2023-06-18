@@ -2,11 +2,14 @@ commands[0]="isort . --check-only"
 commands[1]="mypy --config-file setup.cfg"
 
 errors=()
-set -e
+set +e
 
 for cmd in "${commands[@]}"; do
-    res=$($cmd 2>&1 >/dev/null)
+    echo $cmd
+    res=$($cmd)
     if [ $? -ne 0 ]; then
+        echo 1
+        echo $res
         errors+=("$res")
     fi
 done

@@ -10,7 +10,6 @@ phases:
     commands:
       - echo "Running linters..."
       - chmod +x script.sh
-      - set -e
       - ./script.sh
   build:
     commands:
