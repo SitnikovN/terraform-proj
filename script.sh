@@ -2,7 +2,7 @@ commands[0]="isort . --check-only"
 commands[1]="mypy --config-file setup.cfg"
 
 errors=()
-set +e
+set -e
 
 for cmd in "${commands[@]}"; do
     res=$($cmd 2>&1 >/dev/null)
