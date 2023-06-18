@@ -5,10 +5,8 @@ errors=()
 set +e
 
 for cmd in "${commands[@]}"; do
-    echo $cmd
     res=$($cmd)
     if [ $? -ne 0 ]; then
-        echo 1
         echo $res
         errors+=("$res")
     fi
@@ -21,3 +19,4 @@ if [ ${#errors[@]} -gt 0 ]; then
     done
 fi
 exit 1
+
