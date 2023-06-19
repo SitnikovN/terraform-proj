@@ -15,7 +15,9 @@ done
 
 if [ ${#errors[@]} -gt 0 ]; then
     for err in "${errors[@]}"; do
+     echo "###############ERROR section starts################"
      echo "$err"
+     echo "###############ERROR section ends################"
     done
 fi
 exit 1
