@@ -1,5 +1,6 @@
 commands[0]="isort . --check-only"
 commands[1]="mypy --config-file setup.cfg"
+commands[2]="flake8 ./lambda_handler.py ./src/"
 
 errors=()
 set +e

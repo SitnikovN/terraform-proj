@@ -4,7 +4,7 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
-      - pip install mypy isort
+      - pip install mypy isort flake8
 
   pre_build:
     commands:
