@@ -20,6 +20,6 @@ if [ ${#errors[@]} -gt 0 ]; then
      echo "$err"
      echo "###############ERROR section ends################"
     done
-fi
 exit 1
+fi
 
