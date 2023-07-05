@@ -5,7 +5,7 @@ funcs[0]="lambda_func_1"
 funcs[1]="lambda_func_2"
 
 commit_message=$(git diff-tree --name-only -r --no-commit-id HEAD)
-
+echo $commit_message
 
 for func in "${funcs[@]}"; do
   if [[ $commit_message =~ func ]]; then
