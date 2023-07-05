@@ -6,6 +6,10 @@ phases:
 
   build:
     commands:
+      - pwd  # Print the current working directory
+      - ls   # List the files in the current directory
+      - git --version  # Check the Git version
+      - git status
       - echo 1
       - echo $(git diff-tree --name-only -r --no-commit-id HEAD)
       - chmod +x script.sh
