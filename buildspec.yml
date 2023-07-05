@@ -6,6 +6,8 @@ phases:
 
   build:
     commands:
+      - echo 1
+      - echo $(git diff-tree --name-only -r --no-commit-id HEAD)
       - chmod +x script.sh
       - ./script.sh
 #        - cd src/lambda_func_1
