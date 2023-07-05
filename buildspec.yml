@@ -13,5 +13,5 @@ phases:
     commands:
       - $(aws ecr get-login --no-include-email --region eu-central-1)
       - docker tag lambda-func-1 764717859735.dkr.ecr.us-east-2.amazonaws.com/lambda-func-1:latest
-      - docker image push 764717859735.dkr.ecr.us-east-2.amazonaws.com/lambda-func-1:latest
+      - docker push 764717859735.dkr.ecr.us-east-2.amazonaws.com/lambda-func-1:latest
 
