@@ -6,7 +6,8 @@ phases:
 
   build:
     commands:
-      - funcs[0]="lambda_func_1" &&
+      -|
+        funcs[0]="lambda_func_1" &&
         funcs[1]="lambda_func_2" &&
         str="src/lambda_func_1/app.py src/lambda_func_2/app.py" &&
 
