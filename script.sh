@@ -2,11 +2,11 @@
 
 # Extract the commit message
 funcs[0]="lambda_func_1"
-funcs[1]="lambda_func_2"
+#funcs[1]="lambda_func_2"
 
 commit_message=$(git diff-tree --name-only -r --no-commit-id HEAD)
 echo $commit_message
-set +e
+
 
 
 for func in "${funcs[@]}"; do
@@ -16,8 +16,7 @@ for func in "${funcs[@]}"; do
           $(aws ecr get-login --no-include-email --region eu-central-1)
           docker tag lambda-func-1 764717859735.dkr.ecr.eu-central-1.amazonaws.com/lambda-func-1:latest
           docker push 764717859735.dkr.ecr.eu-central-1.amazonaws.com/lambda-func-1:latest
-          res=$(aws lambda update-function-code --function-name lambda-func-1 --image-uri 764717859735.dkr.ecr.eu-central-1.amazonaws.com/lambda-func-1:latest)
-          echo $res
+          aws lambda update-function-code --function-name lambda-func-1 --image-uri 764717859735.dkr.ecr.eu-central-1.amazonaws.com/lambda-func-1:latest
     fi
 done
 
