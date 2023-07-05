@@ -4,15 +4,15 @@
 funcs[0]="lambda_func_1"
 funcs[1]="lambda_func_2"
 
-str="src/lambda_func_1/app.py src/lambda_func_2/app.py"
+commit_message=$(git diff-tree --name-only -r --no-commit-id HEAD)
 
 
 for func in "${funcs[@]}"; do
-  if [[ $str =~ func ]]; then
+  if [[ $commit_message =~ func ]]; then
           cd src/lambda_func_1
           docker build -t lambda-func-1 .
-          $(aws ecr get-login --no-include-email --region eu-central-1) &&
-          docker tag lambda-func-1 764717859735.dkr.ecr.eu-central-1.amazonaws.com/lambda-func-1:latest &&
+          $(aws ecr get-login --no-include-email --region eu-central-1)
+          docker tag lambda-func-1 764717859735.dkr.ecr.eu-central-1.amazonaws.com/lambda-func-1:latest
           docker push 764717859735.dkr.ecr.eu-central-1.amazonaws.com/lambda-func-1:latest
     fi
 done
