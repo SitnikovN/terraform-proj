@@ -2,11 +2,14 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.9
+      docker: 18
+      python: 3.8
     commands:
       - pip install mypy
 
   build:
+    runtime-versions:
+      docker: 18
     commands:
       - cd src/lambda_func_1
       - docker build -t lambda-func-1 .
