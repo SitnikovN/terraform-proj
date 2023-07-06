@@ -10,7 +10,7 @@ commit_message=$(git diff-tree --name-only -r --no-commit-id HEAD)
 for func in "${funcs[@]}"; do
   if [[ $commit_message =~ func ]]; then
           cd src/$func
-          docker build -t lambda-func-1 .
+          docker build -t $func .
           $(aws ecr get-login --no-include-email --region eu-central-1)
           docker tag $func 764717859735.dkr.ecr.eu-central-1.amazonaws.com/$func:latest
           docker push 764717859735.dkr.ecr.eu-central-1.amazonaws.com/$func:latest
