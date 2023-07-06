@@ -6,7 +6,6 @@ funcs[1]="lambda_func_2"
 
 commit_message=$(git diff-tree --name-only -r --no-commit-id HEAD)
 
-
 for func in "${funcs[@]}"; do
   if [[ $commit_message =~ func ]]; then
           cd src/$func
