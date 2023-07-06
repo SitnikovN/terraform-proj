@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Extract the commit message
-funcs[0]="lambda_func_1"
-funcs[1]="lambda_func_2"
+funcs[0]="lambda-func-1"
+funcs[1]="lambda-func-2"
 
 commit_message=$(git diff-tree --name-only -r --no-commit-id HEAD)
 
