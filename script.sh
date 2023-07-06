@@ -7,7 +7,7 @@ funcs[1]="lambda_func_2"
 commit_message=$(git diff-tree --name-only -r --no-commit-id HEAD)
 
 for func in "${funcs[@]}"; do
-  if [[ $commit_message =~ func ]]; then
+  if [[ $commit_message =~ $func ]]; then
           cd src/$func
           docker build -t $func .
           $(aws ecr get-login --no-include-email --region eu-central-1)
