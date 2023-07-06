@@ -14,8 +14,6 @@ phases:
       - echo $(git diff-tree --name-only -r --no-commit-id HEAD)
       - chmod +x script.sh
       - ./script.sh
-#        - cd src/lambda_func_1
-#      - docker build -t lambda-func-1 .
 
 #  post_build:
 #    commands:
