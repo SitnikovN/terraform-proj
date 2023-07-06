@@ -1,4 +1,4 @@
 import json
 
 def lambda_handler(event, context):
-    print('Hello from lambda 2.7')
+    print('Hello from lambda 2.8')
